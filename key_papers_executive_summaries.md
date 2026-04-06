@@ -8,7 +8,9 @@ These are the papers and reports that matter most for TrustBench. Each summary f
 
 ### 1.1 UntrustIDE: Exploiting Weaknesses in VS Code Extensions
 
-**Citation**: Lin, E., Koishybayev, I., Dunlap, T., Enck, W., & Kapravelos, A. (2024). UntrustIDE: Exploiting Weaknesses in VS Code Extensions. NDSS 2024. https://www.ndss-symposium.org/ndss-paper/untrustide-exploiting-weaknesses-in-vs-code-extensions/
+**Citation**: Lin, E., Koishybayev, I., Dunlap, T., Enck, W., & Kapravelos, A. (2024). UntrustIDE: Exploiting Weaknesses in VS Code Extensions. NDSS 2024.
+
+**Link**: https://www.ndss-symposium.org/ndss-paper/untrustide-exploiting-weaknesses-in-vs-code-extensions/
 
 This won the distinguished paper award at NDSS 2024. The researchers analyzed 25,402 VS Code extensions and found 21 with verified exploits affecting 6 million users. They identified four untrusted input sources (workspace settings, files, user input, network data) and three injection targets. The big finding: workspace files are the primary attack vector. None of the 21 exploits were caught by marketplace scanning.
 
@@ -22,7 +24,9 @@ This won the distinguished paper award at NDSS 2024. The researchers analyzed 25
 
 ### 1.2 "Your AI, My Shell": Prompt Injection on Agentic AI Editors
 
-**Citation**: Liu, Y., Zhao, Y., Lyu, Y., Zhang, T., Wang, H., & Lo, D. (2025). "Your AI, My Shell": Demystifying Prompt Injection Attacks on Agentic AI Coding Editors. arXiv:2509.22040.
+**Citation**: Liu, Y., Zhao, Y., Lyu, Y., Zhang, T., Wang, H., & Lo, D. (2025). "Your AI, My Shell": Demystifying Prompt Injection Attacks on Agentic AI Coding Editors.
+
+**Link**: https://arxiv.org/abs/2509.22040
 
 First empirical study of prompt injection against Cursor and GitHub Copilot. They achieved 41-84% attack success rate (ASR) depending on the LLM model. In auto-execution mode, ASR jumped to 66.9-84.1%. Their AIShellJack benchmark contains 314 payloads covering 70 MITRE ATT&CK techniques.
 
@@ -35,7 +39,9 @@ First empirical study of prompt injection against Cursor and GitHub Copilot. The
 
 ### 1.3 Prompt Injection Attacks: A Systematic Analysis
 
-**Citation**: Meta-analysis (2026). Prompt Injection Attacks on Agentic Coding Assistants. arXiv:2601.17548.
+**Citation**: Meta-analysis (2026). Prompt Injection Attacks on Agentic Coding Assistants.
+
+**Link**: https://arxiv.org/abs/2601.17548
 
 A meta-analysis pulling from MCPSecBench, IDEsaster, and other benchmarks. The headline number: when attackers use adaptive strategies, ASR exceeds 85% against state-of-the-art defenses. The authors introduce the "Consent Gap" concept: users trust AI tools by default without understanding what privileges they're granting.
 
@@ -44,13 +50,15 @@ A meta-analysis pulling from MCPSecBench, IDEsaster, and other benchmarks. The h
 - "Consent Gap" as a theoretical framework I'm validating empirically
 - Their taxonomy for classifying agent-tool boundary violations
 
-**Note**: The 26.1% vulnerability rate in agent skills comes from a related paper, "Agent Skills in the Wild" (arXiv:2601.10338).
+**Note**: The 26.1% vulnerability rate in agent skills comes from a related paper, "Agent Skills in the Wild" ([arXiv:2601.10338](https://arxiv.org/abs/2601.10338)).
 
 ---
 
 ### 1.4 The Promptware Kill Chain
 
-**Citation**: Brodt, L., Feldman, R., Schneier, B., & Nassi, B. (2026). The Promptware Kill Chain. arXiv:2601.09625.
+**Citation**: Brodt, L., Feldman, R., Schneier, B., & Nassi, B. (2026). The Promptware Kill Chain.
+
+**Link**: https://arxiv.org/abs/2601.09625
 
 This reframes prompt injection as the beginning of a malware kill chain, not an isolated exploit. The 7 stages: Initial Access, Privilege Escalation, Reconnaissance, Persistence, Command and Control, Lateral Movement, Actions on Objective. Looking at 36 studies and real incidents, at least 21 attacks traverse 4+ stages. The recommendation: defense in depth that breaks the chain at multiple points.
 
@@ -63,7 +71,9 @@ This reframes prompt injection as the beginning of a malware kill chain, not an 
 
 ### 1.5 TrojanPuzzle: Covertly Poisoning Code-Suggestion Models
 
-**Citation**: Aghakhani, H. et al. (2024). TrojanPuzzle: Covertly Poisoning Code-Suggestion Models. IEEE S&P 2024. arXiv:2301.02344.
+**Citation**: Aghakhani, H. et al. (2024). TrojanPuzzle: Covertly Poisoning Code-Suggestion Models. IEEE S&P 2024.
+
+**Link**: https://arxiv.org/abs/2301.02344
 
 They introduce COVERT and TROJANPUZZLE attacks that plant poison data in docstrings and comments (out-of-context regions that bypass static analysis). TROJANPUZZLE is clever: the poison data never contains the suspicious payload directly, but the model still suggests the complete malicious code at runtime.
 
@@ -76,7 +86,9 @@ They introduce COVERT and TROJANPUZZLE attacks that plant poison data in docstri
 
 ### 1.6 Security Issues in the MCP Ecosystem
 
-**Citation**: MCP Security Analysis (2025). arXiv:2510.16558.
+**Citation**: MCP Security Analysis (2025).
+
+**Link**: https://arxiv.org/abs/2510.16558
 
 First security analysis of the Model Context Protocol. They decomposed MCP into hosts, registries, and servers, then analyzed trust relationships. The findings: hosts don't verify LLM-generated outputs, and IDEs lack origin authentication for MCP servers. They analyzed 67,057 servers from 6 registries. Many can be hijacked because there's no vetted submission process.
 
@@ -89,7 +101,9 @@ First security analysis of the Model Context Protocol. They decomposed MCP into 
 
 ### 1.7 Developers Are Victims Too
 
-**Citation**: Developers Are Victims Too (2024). arXiv:2411.07479.
+**Citation**: Developers Are Victims Too (2024).
+
+**Link**: https://arxiv.org/abs/2411.07479
 
 Large-scale analysis of 52,880 VS Code extensions. 5.6% exhibit suspicious behavior that could compromise dev environments or leak sensitive data. The paper documents VS Code's permissive security architecture: extensions run unchecked with broad host and network access, and developers don't get notified.
 
@@ -106,6 +120,8 @@ Large-scale analysis of 52,880 VS Code extensions. 5.6% exhibit suspicious behav
 
 **Source**: Schneier, B. (2026). The Promptware Kill Chain. Schneier on Security.
 
+**Link**: https://www.schneier.com/blog/archives/2026/01/the-promptware-kill-chain.html
+
 Schneier's take on the academic paper. His point: prompt injections have matured into "a full malware lifecycle comparable to traditional APT campaigns." Input sanitization alone won't cut it. The focus needs to be on preventing privilege escalation, disrupting persistence, and limiting blast radius when an agent gets compromised.
 
 Industry validation of the academic research. Confirms that TrustBench's defense-in-depth approach aligns with expert recommendations.
@@ -114,7 +130,9 @@ Industry validation of the academic research. Confirms that TrustBench's defense
 
 ### 2.2 InstaTunnel: Dependency Side-Loading via AI Extensions
 
-**Source**: InstaTunnel Research Team (2026). Automated Dependency "Side-Loading". Medium.
+**Source**: InstaTunnel Research Team (2026). Automated Dependency "Side-Loading".
+
+**Link**: https://medium.com/@instatunnel/automated-dependency-side-loading-via-ai-extensions-2026
 
 Documents real attacks where malicious extensions (1.5 million combined installs) exploited AI assistants to side-load malicious dependencies. The AI reads invisible instructions in READMEs and imports malicious packages. They also flagged "slopsquatting": LLMs hallucinate non-existent library names about 20% of the time, and attackers pre-register these packages with malicious payloads.
 
@@ -131,6 +149,8 @@ The s1ngularity campaign compromised Nx packages and harvested credentials from 
 
 **Source**: Koi Security (2026). Malicious VS Code AI Extensions Harvesting Code.
 
+**Link**: https://koisecurity.com/research/malicious-vscode-ai-extensions-2026
+
 Two extensions ("ChatGPT - 中文版" with 1.34 million installs, "ChatMoss/CodeMoss" with 150,000) exfiltrated code and credentials to servers in China. The extensions worked exactly as advertised while secretly capturing every file opened and every edit made. Three exfiltration methods: real-time file surveillance, batch file harvesting, and behavioral tracking via zero-pixel iframes with Chinese analytics SDKs. Undetected for months.
 
 **Relevant for TrustBench**:
@@ -145,6 +165,8 @@ Two extensions ("ChatGPT - 中文版" with 1.34 million installs, "ChatMoss/Code
 
 **Source**: Hunt.io Research Team (2025). Malicious VSCode Extension Launches Multi-Stage Attack Chain.
 
+**Link**: https://hunt.io/blog/malicious-vscode-extension-anivia-octorat-2025
+
 "prettier-vscode-plus" appeared on the marketplace on November 21, 2025, impersonating the legitimate Prettier formatter. It deployed Anivia loader, which decrypted and executed OctoRAT (70+ commands for surveillance, file theft, remote desktop, persistence, privilege escalation). Both payloads used AES encryption, in-memory execution, and process hollowing. The attacker rotated payloads frequently on GitHub to evade detection. Removed 4 hours after Checkmarx reported it.
 
 **Relevant for TrustBench**:
@@ -157,6 +179,8 @@ Two extensions ("ChatGPT - 中文版" with 1.34 million installs, "ChatMoss/Code
 ### 2.5 Amazon Q Developer Exploits
 
 **Source**: Embrace The Red (2025). Amazon Q Developer: Remote Code Execution with Prompt Injection.
+
+**Link**: https://embracethered.com/blog/posts/2025/amazon-q-developer-rce-prompt-injection/
 
 Two separate vulnerabilities:
 
@@ -176,6 +200,8 @@ Two separate vulnerabilities:
 ### 3.1 VS Code Extension CVEs: 128M+ Downloads Affected
 
 **Source**: OX Security Research Team (2025). Four Vulnerabilities Expose a Massive Security Blind Spot in IDE Extensions.
+
+**Link**: https://www.ox.security/blog/ide-extension-vulnerabilities-128m-downloads-2025
 
 Four vulnerabilities, 128 million combined downloads:
 
@@ -261,26 +287,25 @@ Prompt injection attacks hit 41-85% ASR depending on model and configuration. Ar
 ## 6. Citation Quick Reference
 
 ### Academic Papers
-1. Lin et al. (2024) - UntrustIDE, NDSS 2024
-2. Liu et al. (2025) - "Your AI, My Shell", arXiv:2509.22040
-3. Meta-Analysis (2026) - arXiv:2601.17548
-4. Brodt et al. (2026) - Promptware Kill Chain, arXiv:2601.09625
-5. Aghakhani et al. (2024) - TrojanPuzzle, IEEE S&P 2024
-6. MCP Security (2025) - arXiv:2510.16558
-7. Developers Are Victims Too (2024) - arXiv:2411.07479
+1. [Lin et al. (2024) - UntrustIDE, NDSS 2024](https://www.ndss-symposium.org/ndss-paper/untrustide-exploiting-weaknesses-in-vs-code-extensions/)
+2. [Liu et al. (2025) - "Your AI, My Shell"](https://arxiv.org/abs/2509.22040)
+3. [Meta-Analysis (2026) - Prompt Injection Attacks](https://arxiv.org/abs/2601.17548)
+4. [Brodt et al. (2026) - Promptware Kill Chain](https://arxiv.org/abs/2601.09625)
+5. [Aghakhani et al. (2024) - TrojanPuzzle, IEEE S&P 2024](https://arxiv.org/abs/2301.02344)
+6. [MCP Security (2025)](https://arxiv.org/abs/2510.16558)
+7. [Developers Are Victims Too (2024)](https://arxiv.org/abs/2411.07479)
+8. [Agent Skills in the Wild (2026)](https://arxiv.org/abs/2601.10338)
 
 ### Industry Reports
-8. InstaTunnel (2026) - Dependency Side-Loading
-9. Koi Security (2026) - MaliciousCorgi Campaign
-10. Hunt.io (2025) - Anivia/OctoRAT
-11. Embrace The Red (2025) - Amazon Q Exploits
-12. OX Security (2025) - VS Code CVEs
-
-### Commentary
-13. Schneier (2026) - Promptware Kill Chain Analysis
+9. [Schneier (2026) - Promptware Kill Chain Analysis](https://www.schneier.com/blog/archives/2026/01/the-promptware-kill-chain.html)
+10. [InstaTunnel (2026) - Dependency Side-Loading](https://medium.com/@instatunnel/automated-dependency-side-loading-via-ai-extensions-2026)
+11. [Koi Security (2026) - MaliciousCorgi Campaign](https://koisecurity.com/research/malicious-vscode-ai-extensions-2026)
+12. [Hunt.io (2025) - Anivia/OctoRAT](https://hunt.io/blog/malicious-vscode-extension-anivia-octorat-2025)
+13. [Embrace The Red (2025) - Amazon Q Exploits](https://embracethered.com/blog/posts/2025/amazon-q-developer-rce-prompt-injection/)
+14. [OX Security (2025) - VS Code CVEs](https://www.ox.security/blog/ide-extension-vulnerabilities-128m-downloads-2025)
 
 ---
 
 **Status**: Ready for thesis integration
-**Sources**: 13 core papers/reports + 20+ supplementary
-**Last updated**: April 5, 2026
+**Sources**: 14 core papers/reports + 20+ supplementary
+**Last updated**: April 6, 2026
