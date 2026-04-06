@@ -39,6 +39,23 @@ Zhang et al. (2025) adopted the same definition in Agent Security Bench (ICLR 20
 | AgentDojo (2024) | Prompt injection | Varies by agent |
 | MaliciousCorgi (2026) | Extension (wild) | 100% |
 
+**How ASR definitions differ across studies**:
+
+| Study | ASR Definition | Success Criteria | Partial Success? |
+|-------|----------------|------------------|------------------|
+| Zhao et al. | (executed malicious intent) / (total) | AI executes target command | Yes (even partial) |
+| Promptware | (instruction to command) / (total) | Multi-step reasoning completes | Yes (any stage) |
+| UntrustIDE | Manual success (qualitative) | Human developer exploited | N/A |
+| Real-world incidents | Binary (installed = compromised) | Extension ran | N/A |
+| TrustBench | (payload in git diff) / (total) | Marker in final code | No (binary) |
+
+TrustBench uses a stricter definition than most prior work:
+- **Binary outcome**: Payload either present or absent (no partial credit)
+- **Ground truth**: Git diff is definitive evidence, not AI logs
+- **Conservative**: Doesn't count "attempted but failed" attacks
+
+This means TrustBench ASR may be lower than prior work, but represents more rigorous evidence of actual compromise.
+
 ---
 
 ### 2.2 Utility Under Attack (UA)
