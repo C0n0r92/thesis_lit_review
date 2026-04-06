@@ -168,8 +168,6 @@ diff --git a/package.json b/package.json
 - Persistence Rate
 - IDE Prevention Rate
 - Data Exposure Volume
-- FPR/FNR (defense evaluation)
-- Precision/Recall/F1 (defense evaluation)
 
 ---
 
@@ -207,31 +205,7 @@ diff --git a/package.json b/package.json
 
 ---
 
-## 5. Defense tools (Phase 3)
-
-### 5.1 ExtensionGuard (static analysis)
-
-Scans extension source for AI-targeting patterns:
-- Writes to `.cursorrules`, `mcp.json`
-- Hooks `onDidSaveTextDocument` with modification
-- Reads clipboard without user action
-- Spawns child processes with network access
-- Modifies files in `node_modules/`
-
-**Evaluation**: 9 PoC variants as true positives, 50 legitimate extensions as true negatives. Metrics: Precision, Recall, F1.
-
-### 5.2 AgentIntegrity Monitor (runtime verification)
-
-Three layers:
-1. **Manifest Integrity**: Hash package.json at session start, alert on changes
-2. **Instruction File Protection**: Monitor .cursorrules, mcp.json for unauthorized writes
-3. **AI Suggestion Hash Verification**: Hash AI output before write, compare after
-
-**Evaluation**: Run all 9 attacks with monitor active. Metrics: Detection rate per layer, FPR, latency overhead.
-
----
-
-## 6. Output artifacts
+## 5. Output artifacts
 
 ### Per trial
 ```
@@ -258,7 +232,7 @@ Three layers:
 
 ---
 
-## 7. Implementation status
+## 6. Implementation status
 
 | Component | Status |
 |-----------|--------|
@@ -270,8 +244,6 @@ Three layers:
 | Cursor automation | Done |
 | Windsurf automation | Planned |
 | Kiro automation | Planned |
-| ExtensionGuard | Planned |
-| AgentIntegrity Monitor | Planned |
 
 ---
 

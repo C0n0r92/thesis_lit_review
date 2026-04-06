@@ -194,44 +194,7 @@ A rate of 0% is itself a finding: it proves the complete absence of any preventi
 
 ---
 
-## 6. Defense evaluation metrics
-
-These apply to Phase 3 when we test ExtensionGuard (static analysis) and AgentIntegrity Monitor (runtime verification).
-
-### 6.1 False Positive Rate (FPR)
-
-**Definition**: `(clean extensions flagged as malicious) / (total clean extensions)`
-
-**Source**: Zhang et al. (2025), Agent Security Bench, ICLR 2025, Table 4. [arXiv:2410.02644](https://arxiv.org/abs/2410.02644). Also standard in CyberSecEval 2 (Bhatt et al., 2024).
-
-**Test corpus**: 50 high-download legitimate extensions (Prettier, ESLint, GitLens, etc.)
-
----
-
-### 6.2 False Negative Rate (FNR)
-
-**Definition**: `(malicious extensions missed) / (total malicious extensions)`
-
-**Source**: Same as FPR.
-
-**Test corpus**: 9 PoC attack variants + reconstructed GlassWorm and OctoRAT patterns from real incidents.
-
----
-
-### 6.3 Precision, Recall, and F1
-
-**Definitions**:
-- Precision = TP / (TP + FP)
-- Recall = TP / (TP + FN)
-- F1 = 2 × (Precision × Recall) / (Precision + Recall)
-
-**Source**: Standard information retrieval metrics. Applied to defense evaluation by Shi, J. et al. (2025) in PromptArmor, which used Precision, Recall, and AUC-ROC to evaluate a prompt injection detection guardrail on the AgentDojo benchmark.
-
-**How we use it**: ExtensionGuard produces a binary flag (malicious or not) for each extension. We compute Precision/Recall/F1 against ground-truth labels.
-
----
-
-## 7. Metric provenance table
+## 6. Metric provenance table
 
 | Metric | Type | Source | Citation |
 |--------|------|--------|----------|
@@ -239,8 +202,6 @@ These apply to Phase 3 when we test ExtensionGuard (static analysis) and AgentIn
 | UA | Established | AgentDojo | Debenedetti et al., NeurIPS 2024 |
 | NRP | Established | Agent Security Bench | Zhang et al., ICLR 2025 |
 | RR | Established | Agent Security Bench | Zhang et al., ICLR 2025 |
-| FPR/FNR | Established | ASB; CyberSecEval 2 | Zhang et al.; Bhatt et al. |
-| Precision/Recall/F1 | Established | PromptArmor | Shi et al., 2025 |
 | Agent Detection Rate | Novel | Inverse of ASR | This thesis |
 | Self-Correction Rate | Novel | Analogue: BP from ASB | This thesis |
 | Persistence Rate | Novel | Precedent: IDEsaster | This thesis; Ahmed, 2025 |
@@ -249,7 +210,7 @@ These apply to Phase 3 when we test ExtensionGuard (static analysis) and AgentIn
 
 ---
 
-## 8. Which metrics apply to which attacks
+## 7. Which metrics apply to which attacks
 
 Not every attack produces every metric. Here's the mapping:
 
@@ -271,7 +232,7 @@ Not every attack produces every metric. Here's the mapping:
 
 ---
 
-## 9. Two measurement layers
+## 8. Two measurement layers
 
 The proposal distinguishes between two layers of measurement:
 
@@ -289,7 +250,7 @@ The mode comparison matters most for A1 and A6: YOLO mode auto-approves terminal
 
 ---
 
-## 10. References
+## 9. References
 
 ### Benchmark papers (metric sources)
 
